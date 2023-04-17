@@ -18,9 +18,9 @@ public class FreteBuilderService {
 	 * @throws CepException if viaCep is {@code null}.
 	 * @throws NotFoundException if viaCep error attribute is {@code true}, that indicates CEP not found.
 	 * */
-	public Frete buildToRead(ViaCep viaCep) throws CepException, NotFoundException {
+	public Frete buildToRead(ViaCep viaCep) throws NotFoundException {
 		if(viaCep == null) {
-			throw new CepException("Failure on conversion XML or JSON to ViaCep object");
+			throw new NotFoundException("Failure on conversion XML or JSON to ViaCep object");
 		}
 		
 		if(viaCep.isErro()) {

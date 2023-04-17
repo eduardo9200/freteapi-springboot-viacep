@@ -1,5 +1,7 @@
 package com.wipro.freteapi.domain.frete.model;
 
+import java.util.Objects;
+
 /**
  * Class from ViaCep API response.
  * */
@@ -82,6 +84,27 @@ public class ViaCep {
 	}
 	public void setErro(boolean erro) {
 		this.erro = erro;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(bairro, cep, complemento, ddd, erro, gia, ibge, localidade, logradouro, siafi, uf);
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ViaCep other = (ViaCep) obj;
+		return Objects.equals(bairro, other.bairro) && Objects.equals(cep, other.cep)
+				&& Objects.equals(complemento, other.complemento) && Objects.equals(ddd, other.ddd)
+				&& erro == other.erro && Objects.equals(gia, other.gia) && Objects.equals(ibge, other.ibge)
+				&& Objects.equals(localidade, other.localidade) && Objects.equals(logradouro, other.logradouro)
+				&& Objects.equals(siafi, other.siafi) && Objects.equals(uf, other.uf);
 	}
 	
 	@Override
