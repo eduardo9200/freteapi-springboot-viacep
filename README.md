@@ -5,7 +5,7 @@
 > Install the dependencies
 
 ```
-maven
+maven: mvn -U clean install
 ```
 
 > Start a local server
